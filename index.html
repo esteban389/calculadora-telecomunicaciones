@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="script.js">
+    </script>
+
+</head>
+<body>
+    
+    
+    <nav id="menu">
+        
+    </nav>
+    <div id="content">
+        <h1>Acerca de</h1>
+        <p>Esta es la página de Acerca de.</p>
+        <h2 id="contador">0</h2>
+        <button id="incrementar">+1</button>
+        <button id="decrementar">-1</button>
+    </div>
+    <input type="text" id="con">
+    <p id="text"></p>
+    <script type="module">
+        
+        import { createState } from "./gestorEstados.js";
+        const text = document.getElementById("text");
+        const input = createState("");
+        const c = document.getElementById("con");
+
+        c.addEventListener('input', (e) =>{
+            input.setState(c.value);
+            const currentState = input.getState();
+            text.textContent = currentState;
+        });
+    </script>
+</body>
+</html>

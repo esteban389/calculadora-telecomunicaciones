@@ -1,0 +1,24 @@
+/* Variables de colores para el modo claro */
+:root {
+    --background-color: #e0e0e0;
+    --text-color: #333;
+}
+
+/* Variables de colores para el modo oscuro */
+.dark-mode {
+    --background-color: #333;
+    --text-color: #e0e0e0;
+}
+
+/* Estilos generales que utilizan las variables */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilos del botón de alternancia */
+#toggle-button {
+    margin: 20px;
+    color:red;
+}
