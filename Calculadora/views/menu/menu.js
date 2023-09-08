@@ -9,6 +9,6 @@ export function menuListeners(){
 
     const longitud = document.getElementById('longitud-de-onda');
     longitud.addEventListener('click', ()=>{
-        navigateTo("longitud-de-onda");
+        navigateTo("views/longitud-de-onda/longitud-de-onda");
     });
 }

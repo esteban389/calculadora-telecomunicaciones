@@ -1,6 +1,7 @@
 import { getCurrentRoute, navigateTo } from "./scripts/enrutador.js";
 import { createState } from "./scripts/gestorEstados.js";
 import { renderPage } from "./scripts/pageRenderer.js";
+import { initializeDarkMode } from "./scripts/mode.js";
 
 //Importing menu Button listeners
 import { menuListeners } from "./views/menu/menu.js";
@@ -10,6 +11,8 @@ const incrementarButton = document.getElementById('incrementar');
 const decrementarButton = document.getElementById('decrementar');
 const contadorState = createState(0, 'contadorState',(state) => {contadorElement.textContent = state;});
 
+// Inicializar la interfaz de usuario con el estado actual
+initializeDarkMode();
 
 
 renderPage("views/menu/menu","menu", menuListeners);
