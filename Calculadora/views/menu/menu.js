@@ -1,4 +1,4 @@
-import { toggleDarkMode } from "/calculadora/scripts/mode.js";
+//import { toggleDarkMode } from "/calculadora/scripts/mode.js";
 import { navigateTo } from "../../scripts/enrutador.js";
 export function menuListeners(){
     const toggleButton = document.getElementById('toggle-button');
