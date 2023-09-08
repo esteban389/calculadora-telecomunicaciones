@@ -3,7 +3,10 @@ export function renderPage(route, container="content", callback= null){
     content.innerHTML = ''; // Clear the content
 
     fetch(window.location.pathname+route+".html")
-        .then(response => response.text())
+        .then(response => {if (!response.ok) {
+            throw new Error('Page not found');
+        }
+        return response.text();})
         .then(html => {
             content.innerHTML = html;
 
