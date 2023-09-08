@@ -1,7 +1,7 @@
-import { toggleDarkMode } from "./mode.js";
-import { getCurrentRoute, navigateTo } from "./enrutador.js";
-import { createState } from "./gestorEstados.js";
-import { renderPage } from "./pageRenderer.js";
+import { toggleDarkMode } from "./scripts/mode.js";
+import { getCurrentRoute, navigateTo } from "./scripts/enrutador.js";
+import { createState } from "./scripts/gestorEstados.js";
+import { renderPage } from "./scripts/pageRenderer.js";
 
 // Crear un estado inicial con valor guardado en sessionStorage o 0
 
@@ -18,7 +18,7 @@ function listeners(){
         toggleDarkMode();
     });
 }
-renderPage("menu","menu", listeners);
+renderPage("views/menu","menu", listeners);
 
 
 // Función para actualizar y mostrar el estado
