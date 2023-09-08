@@ -17,7 +17,7 @@ function listeners(){
         toggleDarkMode();
     });
 }
-renderPage("/menu","menu", listeners);
+//renderPage("/menu","menu", listeners);
 
 
 // Función para actualizar y mostrar el estado
