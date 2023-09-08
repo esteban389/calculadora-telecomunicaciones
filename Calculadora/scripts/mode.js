@@ -6,12 +6,12 @@
 /**
  * Función para alternar entre los modos oscuro y claro de la aplicación.
  * Cambia la clase CSS 'dark-mode' en el elemento 'body' del documento y guarda el estado en localStorage.
- */
+ *//*
 export function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
     const isDarkMode = document.body.classList.contains('dark-mode');
     localStorage.setItem('darkMode', isDarkMode);
-}
+}*/
 
 /**
  * Inicializa el modo oscuro de la aplicación si está habilitado en localStorage.
