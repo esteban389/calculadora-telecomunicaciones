@@ -1,5 +1,5 @@
-import { toggleDarkMode } from "./mode.js";
-import { navigateTo } from "./enrutador.js";
+import { toggleDarkMode } from "../../scripts/mode.js";
+import { navigateTo } from "../../scripts/enrutador.js";
 export function menuListeners(){
     const toggleButton = document.getElementById('toggle-button');
     // Manejar el clic en el botón de alternancia
