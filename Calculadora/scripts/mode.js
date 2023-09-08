@@ -17,6 +17,7 @@ export function toggleDarkMode() {
  * Inicializa el modo oscuro de la aplicación si está habilitado en localStorage.
  * Lee el estado del modo oscuro desde localStorage y aplica la clase 'dark-mode' al elemento 'body' si corresponde.
  */
+/*
 export function initializeDarkMode() {
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
     const body = document.body;
@@ -26,3 +27,4 @@ export function initializeDarkMode() {
         body.classList.add('dark-mode');
     }
 }
+*/
