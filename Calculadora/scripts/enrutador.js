@@ -1,8 +1,8 @@
 import { renderPage } from "./pageRenderer.js";
 const rutas= [
     "/",
-    "/longitud-de-onda",
-    "/limite-shannon"
+    "longitud-de-onda",
+    "limite-shannon"
 ];
 
 export function navigateTo(route) {

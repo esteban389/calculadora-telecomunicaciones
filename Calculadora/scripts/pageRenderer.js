@@ -16,6 +16,21 @@ export function renderPage(route, container="content", callback= null){
             }
         })
         .catch(error => {
+            const errorContainer = document.createElement("div");
             console.error('Error loading page:', error);
+            const errorMessageDiv = document.createElement("div");
+            const stackTraceDiv = document.createElement("div");
+
+            errorContainer.classList.add("error-message"); // Apply CSS class for styling
+            errorMessageDiv.textContent = "An error occurred: " + error.message;
+            stackTraceDiv.textContent = "Stack: " + error.stack;
+
+            // Append the error message and stack trace divs to the error container
+            errorContainer.appendChild(errorMessageDiv);
+            errorContainer.appendChild(stackTraceDiv);
+
+            // Append the error container to the content element
+            content.appendChild(errorContainer);
+
         });
 }
