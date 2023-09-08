@@ -7,10 +7,9 @@ const rutas= [
 
 export function navigateTo(route) {
     if(rutas.includes(route)) {
-        console.log(route)
         renderPage(route); // Renderizar la página correspondiente
     }else{
-        console.log("Página no encontrada");
+        console.error("Página no encontrada");
     }
 }
 

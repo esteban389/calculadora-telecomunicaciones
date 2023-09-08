@@ -27,13 +27,12 @@
         
         import { createState } from "./gestorEstados.js";
         const text = document.getElementById("text");
-        const input = createState("");
+        const input = createState("","text",(state) => {text.textContent= state});
         const c = document.getElementById("con");
-
+        
+        
         c.addEventListener('input', (e) =>{
             input.setState(c.value);
-            const currentState = input.getState();
-            text.textContent = currentState;
         });
     </script>
 </body>
