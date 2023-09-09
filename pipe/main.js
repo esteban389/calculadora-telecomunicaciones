@@ -41,10 +41,15 @@ async function classifyImage() {
 // Función para preprocesar la imagen
 function preprocessImage(image) {
     const tensor = tf.browser.fromPixels(image).toFloat();
-    const resizedTensor = tf.image.resizeBilinear(tensor, [28, 28]);
+    
+    // Calculate the target size based on multiples of 4
+    const targetWidth = Math.floor(tensor.shape[0] / 4) * 4;
+    const targetHeight = Math.floor(tensor.shape[1] / 4) * 4;
+    
+    const resizedTensor = tf.image.resizeBilinear(tensor, [targetWidth, targetHeight]);
     const grayTensor = resizedTensor.mean(2); // Convertir a escala de grises
     const normalizedTensor = grayTensor.div(tf.scalar(255)); // Normalizar
-    const reshapedTensor = normalizedTensor.reshape([1, 28, 28, 1]); // Agregar lote y canal
+    const reshapedTensor = normalizedTensor.reshape([1, targetWidth, targetHeight, 1]); // Agregar lote y canal
 
     return reshapedTensor;
 }
