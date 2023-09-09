@@ -221,7 +221,7 @@
   },
   "weightsManifest": [
     {
-      "paths": ["index.html"],
+      "paths": ["group1.bin"],
       "weights": [
         { "name": "conv2d/kernel", "shape": [3, 3, 1, 32], "dtype": "float32" },
         { "name": "conv2d/bias", "shape": [32], "dtype": "float32" },
