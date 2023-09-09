@@ -1,10 +1,7 @@
 // Función para cargar el modelo de manera asíncrona
 async function loadModel() {
-    const tfn = require('@tensorflow/tfjs-node');
-    const modelPath = 'model.json';
-    const handler = tfn.io.fileSystem(modelPath);
-
-    const model = await tf.loadLayersModel(handler);
+    
+    const model = await tf.loadLayersModel("model.json");
     return model;
 }
 
