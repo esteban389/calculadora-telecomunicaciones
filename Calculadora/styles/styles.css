@@ -1,22 +1,42 @@
 /* Variables de colores para el modo claro */
+/* CSS reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set the html and body to full viewport size */
+html, body {
+    height: 100%;
+}
 :root {
     --background-color: #e0e0e0;
     --text-color: #333;
+    --primary: #3498db; /* Main color for links and buttons */
 }
 
 /* Variables de colores para el modo oscuro */
 .dark-mode {
     --background-color: #333;
     --text-color: #e0e0e0;
+    --primary: #4a90e2;
 }
 
 /* Estilos generales que utilizan las variables */
 body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+
+
     background-color: var(--background-color);
     color: var(--text-color);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-
+.app{
+    display: flex;
+}
 /* Estilos del botón de alternancia */
 #toggle-button {
     margin: 20px;
@@ -31,3 +51,46 @@ body {
     margin-bottom: 1rem; /* Spacing at the bottom */
     line-height: 1.5;
 }
+
+/* Style the navigation container */
+.nav {
+    background-color: var(--background-color);
+    width: 250px;
+    height: 100%;
+    top: 0;
+    left: 0; /* Display the navigation bar by default */
+  }
+  
+  /* Style the list and list items */
+  .nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav li {
+    margin-bottom: 10px;
+  }
+  
+  /* Style the navigation links */
+  .nav-link {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    transition: background-color 0.2s ease;
+  }
+  
+  /* Hover effect for navigation links */
+  .nav-link:hover {
+    background-color: var(--primary);
+    color: white;
+  }
+  
+  /* Style for the content area */
+  .content {
+    margin-left: 250px;
+    /* Add other styles for your content area here */
+  }
+  

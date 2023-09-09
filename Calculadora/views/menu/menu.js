@@ -5,7 +5,6 @@ export function menuInitializer(){
     const toggleButton = document.getElementById('toggle-button');
     const navUl = document.querySelector(".nav").children.item(0);
 
-    console.log(getCurrentRoute());
     // Manejar el clic en el botón de alternancia
     toggleButton.addEventListener('click', () => {
         toggleDarkMode();

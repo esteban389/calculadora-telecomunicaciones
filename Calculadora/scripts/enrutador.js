@@ -22,7 +22,7 @@ export const rutas = {
  * Estado de la ruta actual.
  * @type {object}
  */
-const routeState = createState("/");
+const routeState = createState(rutas["Inicio"],"ruta");
 
 /**
  * Navega a una ruta específica si es válida y actualiza el estado de la ruta.

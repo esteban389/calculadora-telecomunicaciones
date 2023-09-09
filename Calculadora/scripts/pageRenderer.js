@@ -21,7 +21,10 @@
 export function renderPage(route, container = "content", callback = null) {
     const content = document.getElementById(container);
     content.innerHTML = ''; // Limpiar el contenido existente
-
+    const existingScript = document.getElementById("script");
+    if (existingScript) {
+        existingScript.parentNode.removeChild(existingScript);
+    }
     // Cargar la página HTML mediante una solicitud Fetch
     fetch(window.location.pathname + route + ".html")
         .then(response => {
@@ -37,6 +40,13 @@ export function renderPage(route, container = "content", callback = null) {
             if (typeof callback === "function") {
                 const renderedHtmlElement = content.firstElementChild;
                 callback(renderedHtmlElement);
+            }
+            if(container==="content"){
+                // Load and execute associated JavaScript file
+                const script = document.createElement("script");
+                script.id = "script";
+                script.src = window.location.pathname + route + ".js";
+                document.body.appendChild(script);
             }
         })
         .catch(error => {
