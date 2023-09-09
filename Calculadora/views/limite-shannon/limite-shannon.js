@@ -1,5 +1,5 @@
-const resultado = document.getElementById("resultado");
-const calc = document.getElementById("calc");
+resultado = document.getElementById("resultado");
+calc = document.getElementById("calc");
 
 calc.addEventListener('click', ()=>{
     const banda = parseFloat(document.getElementById("banda").value);
@@ -9,6 +9,6 @@ calc.addEventListener('click', ()=>{
         const r = 3.332*banda*Math.log10(1+(señal/ruido));
         resultado.textContent = r;
     }else{
-        resultado.textContent = "Error: Ingrese valores en todos los campos"
+        resultado.textContent = "Error: Ingrese valores correctos en todos los campos"
     }
 })

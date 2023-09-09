@@ -5,7 +5,8 @@ import { initializeDarkMode } from "./scripts/mode.js";
 //Importing menu initializer
 import { menuInitializer } from "./views/menu/menu.js";
 
-
+let resultado;
+let calc;
 // Inicializar la interfaz de usuario con el estado actual
 initializeDarkMode();
 renderPage(getCurrentRoute());

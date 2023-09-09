@@ -10,6 +10,8 @@
 export function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
     const isDarkMode = document.body.classList.contains('dark-mode');
+    let modeButton = document.getElementById("toggle-button");
+    modeButton.textContent = isDarkMode ? "Modo claro": "Modo oscuro";
     localStorage.setItem('darkMode', isDarkMode);
 }
 

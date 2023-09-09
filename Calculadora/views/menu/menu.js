@@ -5,11 +5,13 @@ export function menuInitializer(){
     const toggleButton = document.getElementById('toggle-button');
     const navUl = document.querySelector(".nav").children.item(0);
 
-    // Manejar el clic en el botón de alternancia
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    let modeButton = document.getElementById("toggle-button");
+    if(isDarkMode) modeButton.textContent = "Modo claro";
     toggleButton.addEventListener('click', () => {
         toggleDarkMode();
     });
-    // function to create new nav items
+
     const renderNavlinks = () => {
         const navFragment = document.createDocumentFragment();
         

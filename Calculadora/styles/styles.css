@@ -11,18 +11,29 @@ html, body {
     height: 100%;
 }
 :root {
-    --background-color: #e0e0e0;
-    --text-color: #333;
-    --primary: #3498db; /* Main color for links and buttons */
+    --primary: #1e9e46;
+    --background-color: #ffffff;
+    --text-color: #1f1f1f;
+    --highlight: #663d00;
+    
 }
 
 /* Variables de colores para el modo oscuro */
 .dark-mode {
-    --background-color: #333;
-    --text-color: #e0e0e0;
-    --primary: #4a90e2;
+  --primary: #1e9e46;
+  --background-color: #1f1f1f;
+  --text-color: #fff;
+  --secondary: #303030;
+  --highlight: #ff9900;
 }
-
+button{
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;/* Add underline to make it look like a link */
+  color: inherit;
+}
 /* Estilos generales que utilizan las variables */
 body {
     margin: 0;
@@ -35,13 +46,13 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 .app{
+    height: 100%;
+    width: 100%;
     display: flex;
+    gap: 15px;
 }
 /* Estilos del botón de alternancia */
-#toggle-button {
-    margin: 20px;
-    color:red;
-}
+
 .error-message{
     color: #721c24; /* Text color */
     background-color: #f8d7da; /* Background color */
@@ -54,11 +65,13 @@ body {
 
 /* Style the navigation container */
 .nav {
-    background-color: var(--background-color);
-    width: 250px;
+    background-color: #333;
+    width: 200px;
     height: 100%;
-    top: 0;
-    left: 0; /* Display the navigation bar by default */
+    display: flex;
+    flex-direction: column;
+    padding-block: 20px;
+    justify-content: space-between;
   }
   
   /* Style the list and list items */
@@ -78,8 +91,10 @@ body {
     padding: 10px 20px;
     text-decoration: none;
     color: var(--text-color);
-    background-color: var(--background-color);
+    background-color: var(--secondary);
     transition: background-color 0.2s ease;
+    width: 100%;
+    text-align: left;
   }
   
   /* Hover effect for navigation links */
@@ -88,9 +103,63 @@ body {
     color: white;
   }
   
-  /* Style for the content area */
-  .content {
-    margin-left: 250px;
-    /* Add other styles for your content area here */
+  #calc{
+    margin-top: 30px;
+    padding: 1em 2em;
+    background-color: var(--primary);
+    color: var(--text-color);
+    border-radius: 6px;
+    transition: transform ease 0.2s, box-shadow ease 0.2s;
+    display: inline-block;
+    font-size: 18px;
+    z-index: 2;
+    white-space: nowrap;
   }
+  #calc:hover{
+    transform: translate(0, -3px);
+    box-shadow: 0 15px 20px -10px var(--primary);
+  }
+
+
   
+#content {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text-color);
+}
+
+h1 {
+  color: var(--primary);
+  margin-bottom: 40px;
+}
+
+label {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+input[type="text"] {
+  background-color: var(--secondary);
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
+  outline: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+p {
+  font-size: 1.25rem;
+  color: var(--text-color);
+}
+
+#resultado {
+  font-weight: bold;
+  color: var(--highlight);
+}
+
