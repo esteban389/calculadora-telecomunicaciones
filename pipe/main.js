@@ -55,4 +55,3 @@ window.onload = function() {
     const classifyButton = document.getElementById('classifyButton');
     classifyButton.addEventListener('click', classifyImage);
 };
-
