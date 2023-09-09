@@ -42,12 +42,12 @@ async function classifyImage() {
 function preprocessImage(image) {
     const tensor = tf.browser.fromPixels(image).toFloat();
     const resizedTensor = tf.image.resizeBilinear(tensor, [28, 28]);
-    const grayTensor = resizedTensor.mean(2); // Convert to grayscale
-    const normalizedTensor = grayTensor.div(tf.scalar(255)); // Normalize
-    const reshapedTensor = normalizedTensor.reshape([1, 28, 28, 1]); // Add batch and channel dimension
+    const grayTensor = resizedTensor.mean(2); // Convertir a escala de grises
+    const normalizedTensor = grayTensor.div(tf.scalar(255)); // Normalizar
+    const reshapedTensor = normalizedTensor.reshape([1, 28, 28, 1]); // Agregar lote y canal
+
     return reshapedTensor;
 }
-
 
 // Función que se ejecuta cuando la página ha cargado
 window.onload = function() {
@@ -55,3 +55,4 @@ window.onload = function() {
     const classifyButton = document.getElementById('classifyButton');
     classifyButton.addEventListener('click', classifyImage);
 };
+
