@@ -1,7 +1,6 @@
 // Función para cargar el modelo de manera asíncrona
 async function loadModel() {
-    
-    const model = await tf.loadLayersModel("model.json");
+    const model = await tf.loadLayersModel('model.json');
     return model;
 }
 
@@ -56,4 +55,6 @@ window.onload = function() {
     const classifyButton = document.getElementById('classifyButton');
     classifyButton.addEventListener('click', classifyImage);
 };
+
+
 

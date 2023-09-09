@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
     <title>Clasificacion de Crateres</title>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-    <script src="main.js" type="module"></script>
+    <script src="main.js"></script>
+    <link rel="manifest" href="manifest.json" />
     <style>
         /* Estilos para centrar contenido */
         body {
@@ -52,5 +52,30 @@
     <p>Resultado: <span id="result"></span></p>
     <img id="preview">
     <p id="loadingMessage"></p>
+    <button id="install-button" style="display: none;">Install My PWA</button>
+    <script>
+        if("serviceWorker" in navigator){
+            navigator.serviceWorker.register("/service-worker.js");
+        }
+        
+        if ('serviceWorker' in navigator && 'PushManager' in window) {
+            
+            window.addEventListener('beforeinstallprompt', event => {
+                // Prevent the browser's default install prompt
+                event.preventDefault();
+                
+                // Show your custom install button or message
+                const installButton = document.getElementById('install-button');
+                installButton.style.display = 'block';
+
+                // Handle the click event on your install button
+                installButton.addEventListener('click', () => {
+                // Trigger the browser's install prompt
+                event.prompt();
+                });
+            });
+        }
+    </script>
 </body>
 </html>
+
