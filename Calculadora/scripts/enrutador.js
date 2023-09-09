@@ -8,6 +8,15 @@
 import { renderPage } from "./pageRenderer.js";
 import { createState } from "./gestorEstados.js";
 
+/**
+ * Lista de rutas válidas en la aplicación.
+ * @type {string[]}
+ */
+export const rutas = {
+    "Inicio":"views/home/home",
+    "Longitud de onda":"views/longitud-de-onda/longitud-de-onda",
+    "Limite shannon":"views/limite-shannon/limite-shannon"
+};
 
 /**
  * Estado de la ruta actual.

@@ -20,19 +20,5 @@
         <button id="incrementar">+1</button>
         <button id="decrementar">-1</button>
     </div>
-    <input type="text" id="con">
-    <p id="text"></p>
-    <script type="module">
-        
-        import { createState } from "./scripts/gestorEstados.js";
-        const text = document.getElementById("text");
-        const input = createState("","text",(state) => {text.textContent= state});
-        const c = document.getElementById("con");
-        
-        
-        c.addEventListener('input', (e) =>{
-            input.setState(c.value);
-        });
-    </script>
 </body>
 </html>

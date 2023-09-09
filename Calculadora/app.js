@@ -4,7 +4,7 @@ import { renderPage } from "./scripts/pageRenderer.js";
 import { initializeDarkMode } from "./scripts/mode.js";
 
 //Importing menu Button listeners
-import { menuListeners } from "./views/menu/menu.js";
+import { menuInitializer } from "./views/menu/menu.js";
 // Obtener referencias a elementos HTML
 const contadorElement = document.getElementById('contador');
 const incrementarButton = document.getElementById('incrementar');
@@ -14,11 +14,9 @@ const contadorState = createState(0, 'contadorState',(state) => {contadorElement
 // Inicializar la interfaz de usuario con el estado actual
 initializeDarkMode();
 
+// Agregar el menú de navegación a la interfaz de usuario
+renderPage("views/menu/menu","menu", menuInitializer);
 
-renderPage("views/menu/menu","menu", menuListeners);
-
-
-// Función para actualizar y mostrar el estado
 
 
 // Manejadores de eventos para los botones
