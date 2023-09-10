@@ -46,7 +46,7 @@ export function renderPage(route, container = "content", callback = null) {
                 const renderedHtmlElement = content.firstElementChild;
                 callback(renderedHtmlElement);
             }
-            if(container==="content" && !getCurrentRoute()==="views/home/home"){
+            if(container==="content" && !(getCurrentRoute()==="views/home/home")){
                 // Load and execute associated JavaScript file
                 const script = document.createElement("script");
                 script.id = "script";
