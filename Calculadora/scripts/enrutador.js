@@ -20,7 +20,6 @@ export const rutas = {
     "Voltaje de ruido":"views/voltaje-ruido/voltaje-ruido",
     "Factor de ruido": "views/factor-ruido/factor-ruido",
     "Decibeles": "views/decibeles/decibeles",
-    "Presupuesto de potencia": "views/presupuesto-potencia/presupuesto-potencia",
     "BER":"views/BER/BER"
 };
 
