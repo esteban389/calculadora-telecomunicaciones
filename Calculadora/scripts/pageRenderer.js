@@ -18,9 +18,14 @@
  *     console.log("Página renderizada:", renderedHtmlElement);
  * });
  */
+
+import {getCurrentRoute} from './enrutador.js';
+import { menuInitializer } from "../views/menu/menu.js";
+
 export function renderPage(route, container = "content", callback = null) {
     const content = document.getElementById(container);
     content.innerHTML = ''; // Limpiar el contenido existente
+    if(container==="content") renderPage("views/menu/menu","menu", menuInitializer);
     const existingScript = document.getElementById("script");
     if (existingScript) {
         existingScript.parentNode.removeChild(existingScript);
@@ -41,7 +46,7 @@ export function renderPage(route, container = "content", callback = null) {
                 const renderedHtmlElement = content.firstElementChild;
                 callback(renderedHtmlElement);
             }
-            if(container==="content"){
+            if(container==="content" && !getCurrentRoute()==="views/home/home"){
                 // Load and execute associated JavaScript file
                 const script = document.createElement("script");
                 script.id = "script";

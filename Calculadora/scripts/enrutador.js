@@ -15,7 +15,13 @@ import { createState } from "./gestorEstados.js";
 export const rutas = {
     "Inicio":"views/home/home",
     "Longitud de onda":"views/longitud-de-onda/longitud-de-onda",
-    "Limite shannon":"views/limite-shannon/limite-shannon"
+    "Limite shannon":"views/limite-shannon/limite-shannon",
+    "Ruido termico":"views/ruido-termico/ruido-termico",
+    "Voltaje de ruido":"views/voltaje-ruido/voltaje-ruido",
+    "Factor de ruido": "views/factor-ruido/factor-ruido",
+    "Decibeles": "views/decibeles/decibeles",
+    "Presupuesto de potencia": "views/presupuesto-potencia/presupuesto-potencia",
+    "BER":"views/BER/BER"
 };
 
 /**

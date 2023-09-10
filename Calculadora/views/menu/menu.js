@@ -17,7 +17,7 @@ export function menuInitializer(){
         
         Object.keys(rutas).forEach(nombreRuta => {
             const linkElement = document.createElement('button');
-            if(getCurrentRoute==="Inicio" && nombreRuta==="Inicio") console.log("este es el inicio");
+            if(getCurrentRoute()==="views/home/home" && nombreRuta==="Inicio") return;
             linkElement.id = rutas[nombreRuta];
             linkElement.textContent = nombreRuta;
             linkElement.className = 'nav-link';
