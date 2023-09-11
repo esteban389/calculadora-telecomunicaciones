@@ -1,7 +1,26 @@
-<h1>Decibeles</h1>
-<label>
-    Ingrese la potencia de la señal en Watts:
-    <input type="text" name="potencia" id="potencia">
-</label>
-<p>El resultado es: <span id="resultado"></span></p>
-<button id="calc">Calcular</button>
+<div>
+    <h1>Decibeles</h1>
+    <label>
+        Ingrese la potencia de la señal en Watts:
+        <input type="text" name="potencia" id="potencia">
+    </label>
+    <label>
+        Ingrese la potencia referida:
+        <input type="text" name="potenciaRef" id="potenciaRef">
+    </label>
+    <label>
+        Para calcular los decibeles en relación al voltaje, ingrese el voltaje:
+        <input type="text" name="voltaje" id="voltaje">
+    </label>
+    <p>El resultado es: <span id="resultado"></span></p>
+    <button id="calc" class="calc">Calcular</button>
+</div>
+<div style="padding-top: 30px;">
+    <h1>Potencia</h1>
+    <label>
+        Ingrese el valor en decibeles:
+        <input type="text" id="decibeles" name="decibeles">
+    </label>
+    <p>La potencia es: <span id="resultadoPotencia"></span></p>
+    <button class="calc" id="calcPotencia">Calcular</button>
+</div>

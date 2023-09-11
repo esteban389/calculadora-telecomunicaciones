@@ -47,10 +47,21 @@ export function renderPage(route, container = "content", callback = null) {
                 callback(renderedHtmlElement);
             }
             if(container==="content" && !(getCurrentRoute()==="views/home/home")){
-                // Load and execute associated JavaScript file
                 const script = document.createElement("script");
                 script.id = "script";
                 script.src = window.location.pathname + route + ".js";
+                script.type = "module";
+
+                // Add an event listener to execute the script when it's loaded
+                script.addEventListener("load", () => {
+                    // Script has loaded, now you can execute your callback or any other logic
+                    if (typeof callback === "function") {
+                        const renderedHtmlElement = content.firstElementChild;
+                        callback(renderedHtmlElement);
+                    }
+                });
+
+                // Append the script to the body
                 document.body.appendChild(script);
             }
         })
