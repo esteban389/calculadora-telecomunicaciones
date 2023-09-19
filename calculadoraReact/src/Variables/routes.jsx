@@ -16,15 +16,17 @@ export const rutas = [
     },
     {
         dropdown: true,
-        subroutes: {
+        name: "Ruido",
+        subroutes: [{
             name: "Ruido térmico",
             route: "/ruido-termico",
             Element: "../pages/ruido-termico"
         },
-    },
-    {
-        name: "Ruido térmico",
-        route: "/ruido-termico",
-        Element: "../pages/ruido-termico"
+        {
+            name: "Voltaje de ruido",
+            route: "/voltaje-ruido",
+            Element: "../pages/voltaje-ruido"
+        }
+        ],
     },
 ]

@@ -1,4 +1,4 @@
-import { ModeButton } from './ModeButton';
+
 import { rutas } from '../Variables/routes';
 import { NavLink } from "react-router-dom";
 
@@ -20,7 +20,7 @@ export function Sidebar(){
                 })}
 
             </ul>
-            <ModeButton />
+            
         </nav>
     )
 }
