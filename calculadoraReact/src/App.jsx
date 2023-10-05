@@ -1,26 +1,64 @@
-import { useState } from 'react'
-import { Sidebar } from './components/Sidebar'
-import { BrowserRouter } from 'react-router-dom'
-import {ModeToggle} from './components/modeToggle'
-
+import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
+import { ScrollArea } from './components/ui/scroll-area';
+import { Header } from './components/header';
+import { rutas } from './lib/routes';
+import { Suspense } from 'react';
+import { PagesSkeleton } from './components/pagesSkeleton'
+/*
+  TODO:
+    create: [all the pages]
+    add: [
+      copy to clipboard on results react-copy-to-clipboard,
+      units per LABEL on form and on result,
+      decide on different inputs (longitud onda tiene frecuencia o periodo),
+      transition animations
+    ]
+*/
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <BrowserRouter>
-      <div className="h-screen bg-slate-200 flex flex-row justify-center items-center dark:bg-neutral-900">
-      <div className='absolute top-0 right-0 p-5'>
-        <ModeToggle />
-      </div>
-        <Sidebar />
-        <main className='h-screen w-full p-5 flex justify-center items-center'>
-          <button className='bg-slate-400 px-4 py-2 rounded hover:bg-slate-600 hover:text-slate-200 text-gray-800' onClick={() => setCount((count) => count + 1)}>
-            count is {count}
-          </button>
+      
+      
+        <main className='w-full'>
+          <ScrollArea className='w-full px-16 mt-[20%] md:mt-[8%]'>
+            <Routes>
+              <Route path='/' element={<Layout />}>
+                {rutas.map((ruta,i )=>{
+                  return (
+                    <>
+                      {
+                        ruta.dropdown
+                        ? <Route path={ruta.route} key={i}>
+                          {
+                            ruta.subroutes.map((subruta,i)=>{
+                              return (<Route path={subruta.route} element={subruta.Element} key={i} />)
+                            })
+                          }
+                        </Route>
+                        
+                        : <Route path={ruta.route} element={ruta.Element} key={i} />
+                      }
+                    </>
+                  )
+
+                })}
+              </Route>
+            </Routes>
+          </ScrollArea>
         </main>
-      </div>
     </BrowserRouter>
   )
 }
+function Layout(){
+  return(
+    <>
+    <Header />
+    <Suspense fallback={<PagesSkeleton />}>
 
+      <Outlet></Outlet>
+    </Suspense>
+    </>
+  )
+}
 export default App
